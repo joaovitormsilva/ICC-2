@@ -49,23 +49,6 @@ void bolha(int tam,int vet[]){
         } 
             sentinela=chance;
     }
-    /*int continuar=1,fim=tam;
-    do {
-        continuar=0;
-        for(int i=0;i<fim-1;i++){
-            printf("C %d %d\n",i,i+1);
-            if(vet[i]>vet[i+1]){
-                printf("T %d %d\n",i,i+1);
-                vet[i+1] ^= vet[i];
-                vet[i] ^= vet[i+1];
-                vet[i+1] ^= vet[i];
-                continuar =i;
-            }
-        }
-        fim--;
-    }while(continuar!=0);
-    */
-    
     for(int i=0;i<tam;i++){
         printf("%d ",vet[i]);
     }

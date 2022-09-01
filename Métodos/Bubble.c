@@ -10,9 +10,9 @@ int main(){
 
 
     int sentinela= tam-1;
-    int chance;
+    int ultimaTroca;
     while(sentinela){
-        chance=0;
+        ultimaTroca=0;
         for(int j=0;j<sentinela;j++){
             printf("C %d %d\n",j,j+1);
             if(vet[j]>vet[j+1]){
@@ -20,10 +20,10 @@ int main(){
                 vet[j] ^= vet[j+1];
                 vet[j+1] ^= vet[j];
                 vet[j] ^= vet[j+1];
-                chance=j;
+                ultimaTroca=j;
             }
         } 
-            sentinela=chance;
+            sentinela=ultimaTroca;
     }
 
     
