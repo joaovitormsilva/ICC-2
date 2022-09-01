@@ -1,1 +1,0 @@
-main: conjunto.c conjunto.h
