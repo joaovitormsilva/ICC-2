@@ -1,0 +1,61 @@
+A equação de Recorrência serve para calcular a complexidade
+O caso base é importante e os passos serão importantes também
+Além dele ser o caso em que se sai mais rapido da função
+    Operações básicas = Ser números, não envolver o vetor
+    Comparação = compara com algum elemento do vetor
+    Atribuição = atribui algum elemento do vetor
+
+Equação do Merge =
+Caso base: T(r,u) = 2, se r > u 
+Se não: T(r, u) = 16 + T(2r+1,u)
+
+Calculo com o pai sendo 0:
+    T(0,u) = T(2*0+1,u)+16
+    T(0,u) = T(1,u)+16
+
+    T(0,u) = T(3,u) +16 + 16 
+    T(0,u) = T(3,u) +2*16  
+
+    T(0,u) = T(7,u) +3*16  
+    T(0,u) = T(7,u) +3*16 
+
+    T(0,u) = T(15,u) +4*16 
+    T(0,u) = T(15,u) +4*16 
+
+    Logo, o próximo será:
+    T(0,u) = T(31,u) + 5*16
+
+    T(0,u) = T( [2^6] - 1,u) + 6 16 
+
+
+Calculo com raiz sendo 1:
+    T(1,u)= T(3,u) + 16
+
+    T(3,u) = T(7,u) + 16 
+
+    T(7,u) = T(15,u) + 16 
+
+    T(0,u) = T( [2^K]-1,u) + K * 16 **Equação geral
+
+Para achar o caso base:
+(2^K)-1 > u 
+
+2^k> u+1
+
+K > log2(u+1)
+
+U+1 seria ruim para calcular, então pega-se um K maior que u+1:
+
+K > log2(2u)
+
+K > 1 + log2(u)
+
+Precisa-se achar um K maior que a desigualdade então, pega-se:
+
+K = 2 + log2(u)
+
+Então, volta-se na equação geral com T( [2^K] -1,u) = 2
+
+T(0,u) = 2 + (2 + log2(u)) + 16
+T(0,u) = 34 + log2 (U
+)
