@@ -16,44 +16,57 @@ void criar_pilha(pilha *p){
     p->topo = NULL;
     p->tam = 0;
 }
-fatorial(int valor){
 
-
-    
-}
-void empilhar(pilha *p){
+No* empilhar(No *p,int num){
     No *novo=malloc(sizeof(No));
     if(novo){
-        novo->p=ler_pessoa();
-        novo->proximo=p->topo;
-        p->topo = novo;
-        p->tam++;
+        novo->valor=num;
+        novo->proximo=p;
+        return novo;
     }
     else{
         printf("erro\n");
     }
-}
-No* desempilhar(pilha *p){
-    if(p->topo){
-        No *auxiliar=p->topo;
-        p->topo = auxiliar->proximo;
-        p->tam--;
-        return auxiliar;
-    }
-    else{
-        printf("Pilha vazia\n");
-    }
     return NULL;
 }
 
-void imprimir_pilha(pilha *p){
-    No *aux= p->topo;
-    printf("Pilha tam: %d\n",p->tam);
-    while(aux){
-        imprimir_pessoa(aux->p);
-        aux = aux->proximo;
+No* desempilhar(No **pilha){
+    No *remover = NULL;
+    if(*pilha){
+        remover = *pilha;
+        *pilha = remover->proximo;
+    }
+    else
+        printf("Pilha vazia\n");
+    return remover;
+}
+
+void imprimir_pilha(No *p){
+    printf("Pilha\n");
+    while(p){
+       printf("%d\n",p->valor);
+       p = p -> proximo;
     }
 }
+
+int fatorial(int num){
+    No *pilha= NULL;
+    No *remover;
+    while(num>1){
+        pilha = empilhar(pilha,num);
+        num--;
+    }
+
+    imprimir_pilha(pilha);
+
+    while(pilha){
+        remover = desempilhar(&pilha);
+        num = num * remover->valor;
+        free(remover);
+    }
+    return num;
+}
+
 int main(){
     setlocale(LC_ALL,"Portuguese");
     No *remover;

@@ -43,6 +43,7 @@ void empilhar(pilha *p){
         printf("erro\n");
     }
 }
+
 No* desempilhar(pilha *p){
     if(p->topo){
         No *auxiliar=p->topo;
@@ -55,9 +56,11 @@ No* desempilhar(pilha *p){
     }
     return NULL;
 }
+
 void imprimir_pessoa(pessoa p){
     printf("%s\n%d/%d/%d\n",p.nome,p.aniversario.dia,p.aniversario.mes,p.aniversario.ano);
 }
+
 void imprimir_pilha(pilha *p){
     No *aux= p->topo;
     printf("Pilha tam: %d\n",p->tam);
@@ -66,6 +69,7 @@ void imprimir_pilha(pilha *p){
         aux = aux->proximo;
     }
 }
+
 int main(){
     setlocale(LC_ALL,"Portuguese");
     No *remover;
