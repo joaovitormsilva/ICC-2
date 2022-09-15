@@ -1,0 +1,39 @@
+A equação de Recorrência serve para calcular a complexidade
+O caso base é importante e os passos serão importantes também
+Além dele ser o caso em que se sai mais rapido da função
+    Operações básicas = Ser números, não envolver o vetor
+    Comparação = compara com algum elemento do vetor
+    Atribuição = atribui algum elemento do vetor
+
+Equacao de Recorrência do Merge:
+
+Caso base : T(1) = 2
+Se não:
+    T(n) = 1 + T(n/2) + T(n/2) + 5n + 3 
+    T(n) = 2 T(n/2) + 5n + 4
+
+T(n/2), será :
+T(n/2) = 2 T(n/2/2) + 5(n/2) + 4
+    
+    T(n) = 2 (T(n/2^2)) + 5 (n/2) + 4) + 5n + 4
+    T(n) = 2 ^ 2 [T(n/2^2)] + 5n + 2 * 4 + 5n + 4
+    T(n) = 2 ^ 2 T(n/2 ^2 ) + 2(5n) + (2+1)*4
+
+T(n/2^2) será:
+T(n/2^2) = 2 T(n/2^2/2) + 5(n/2^2) + 4
+
+    T(n) = 2 ^ 3 T(n/2^3) + 5n + (2^2 + 2^1 + 2^0)*4
+
+Para K seria:
+    T(n) = 2 ^ K * T(n / 2^K) + K*(5n) + Somatório de (2^id) com i = 0 até k-1
+    Ou:
+    T(n) = 2 ^ K * T(n / 2^K) + K*(5n) + 4 * ( (2 ^k) - 1 )
+
+
+Para deixar T(n / 2^K) = 1, então seria preciso que n / 2^K = 1, logo:
+    n/2^k = 1
+    n = 2^k 
+    log2 N = K
+
+Jogando na fórmula:
+    T(n) = 5  n log n + 6n - 4

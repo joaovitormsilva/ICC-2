@@ -1,0 +1,8 @@
+A equação de Recorrência serve para calcular a complexidade
+O caso base é importante e os passos serão importantes também
+Além dele ser o caso em que se sai mais rapido da função
+    Operações básicas = Ser números, não envolver o vetor
+    Comparação = compara com algum elemento do vetor
+    Atribuição = atribui algum elemento do vetor
+
+   

@@ -5,7 +5,7 @@ Além dele ser o caso em que se sai mais rapido da função
     Comparação = compara com algum elemento do vetor
     Atribuição = atribui algum elemento do vetor
 
-Equação do Merge =
+Equação do Heap =
 Caso base: T(r,u) = 2, se r > u 
 Se não: T(r, u) = 16 + T(2r+1,u)
 
